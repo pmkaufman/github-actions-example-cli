@@ -46,8 +46,6 @@ jobs:
         shell: bash
         run: |
           cpln profile update default --token ${CPLN_TOKEN}
-          echo ${CPLN_IMAGE}
-          echo ${CPLN_IMAGE}:${SHORT_SHA}
           cpln image docker-login
           cpln image build --name ${CPLN_IMAGE}:${SHORT_SHA} --dockerfile ./Dockerfile --push
 
