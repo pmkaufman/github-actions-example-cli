@@ -47,7 +47,6 @@ jobs:
         run: |
           cpln profile update default --token ${CPLN_TOKEN}
           cpln image docker-login
-          echo ${CPLN_IMAGE}:${SHORT_SHA}
           cpln image build --name ${CPLN_IMAGE}:${SHORT_SHA} --dockerfile ./Dockerfile --push
 
       - name: Substitute Tokens in Control Plane YAML Files
